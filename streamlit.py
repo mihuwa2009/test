@@ -5,9 +5,6 @@ from PIL import Image
 
 tabs = st.tabs(["Model Training", "Drawable Canvas"])
 
-with tabs[0]:
-	st.header('Test')
-
 with tabs[1]:
 	canvas_result = st_canvas(stroke_width=15,
 							  stroke_color='rgb(255, 255, 255)',
