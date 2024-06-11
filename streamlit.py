@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from streamlit_drawable_canvas import st_canvas
 
 # Sidebar with tabbed navigation
 with st.sidebar:
@@ -23,5 +24,14 @@ elif selected == "Training Models":
 # Results Page
 elif selected == "Results":
     st.title("Results")
+    canvas_result = st_canvas(stroke_width=15,
+                              stroke_color='rgb(255, 255, 255)',
+                              background_color='rgb(0, 0, 0)',
+                              height=150,
+                              width=150,
+                              key="canvas")
+
+    if canvas_result.image_data is not None:
+        img = canvas_result.image_data
     st.write("Here are the results.")
     # Add results display widgets and functionality here
